@@ -1,6 +1,6 @@
-<h3>Edit <%= @item.name %></h3>
-<%= form_with model: @item ,method: :patch do |form| %>
+<h1>Edit <%= @item.name %></h1>
+<%= form_with model: @item, url: items_update_path do |form| %>
   <%= form.text_field :name, placeholder: "name" %>
   <%= form.text_field :price, placeholder: "price" %>
-  <%= form.submit %>
+  <%= form.submit 'Update'%>
 <% end %>

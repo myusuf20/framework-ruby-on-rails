@@ -1,9 +1,9 @@
-<h1> Items </h1>
+<h1>Items</h1>
 <table>
   <thead>
     <tr>
-        <td><b>Name</b></td>
-        <td><b>Price</b></td>
+      <td><b>Name</b></td>
+      <td><b>Price</b></td>
     </tr>
   </thead>
   <tbody>
@@ -11,9 +11,13 @@
       <tr>
         <td><%= item.name %></td>
         <td><%= item.price %></td>
-        <td><%= link_to "Show", item %></td>
-        <td><%= link_to "Edit", edit_item_path(item) %></td>
-        <td><%= button_to "Delete", item, :method => :delete %></td>
+        <div>
+          <td>
+            <%= link_to("Show", items_show_path(item.id)) %>
+            <%= link_to("Edit", items_edit_path(item.id)) %>
+            <%= link_to("Delete", items_delete_path(item.id), data: { confirm: 'Yakin ingin dihapus?' }, method: :delete) %>
+          </td>
+        </div>
       </tr>
     <% end %>
   </tbody>
